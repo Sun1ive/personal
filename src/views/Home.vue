@@ -1,8 +1,7 @@
 <template>
-  <div class="background">
+  <div v-if="isVisible" class="background">
     <h1 class="head slideUp">Sunlive.pro</h1>
     <vue-particles
-      v-if="isVisible"
       :clickEffect="true"
       color="#dedede"
     />

@@ -25,7 +25,7 @@ export default Vue.extend({});
 <style lang="stylus" scoped>
 .nav
   position absolute
-  top 5%
+  top 0%
   left 50%
   z-index 999
   &__item

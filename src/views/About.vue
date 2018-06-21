@@ -1,11 +1,98 @@
 <template>
-  <div class="about">
-    <h1>This is an about page</h1>
-    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Delectus magnam qui, tempora facere tempore vel, hic dignissimos, veritatis exercitationem nostrum distinctio. Dicta quas ratione eveniet minus dolore aliquam repudiandae veniam voluptatum ipsam, magni suscipit fugit, distinctio itaque libero ex officiis delectus voluptas ea laudantium maiores? Aliquid totam natus nihil obcaecati quis esse expedita voluptatum veritatis corporis magnam inventore quidem architecto, minus tenetur perferendis nemo mollitia accusantium consequatur deleniti eaque fugiat. Saepe qui, quis placeat velit odio non quae obcaecati earum voluptatem culpa veniam perferendis a quibusdam sequi. Minus eos architecto temporibus ab accusamus molestiae veritatis nobis porro nemo, optio debitis, perspiciatis repellat autem nam alias! Autem laudantium repudiandae eligendi vel in veniam. Ipsum incidunt cum veniam consequuntur, delectus atque exercitationem doloribus. Laboriosam quaerat libero veniam sint repellat error, natus officia quo nihil ab odio incidunt suscipit fugit, corporis, reprehenderit quibusdam deleniti. Nesciunt reprehenderit, quibusdam, quidem facere fugit enim voluptatem necessitatibus voluptatibus laboriosam error sunt odio. Inventore eligendi, tenetur fuga nobis, quos itaque cupiditate obcaecati praesentium quisquam dolorum repudiandae nihil laborum sunt dolor sed id consequuntur iure! Ratione animi blanditiis nostrum non consectetur nemo? Dicta quasi veniam aliquid sunt quos, officiis quisquam eaque. Quia omnis ipsa repudiandae? Corrupti eaque laudantium quod ratione. Temporibus aut ratione quod repudiandae laboriosam accusantium sit consequatur. Sit velit provident recusandae sapiente, magnam nulla iure deserunt. Aut expedita reiciendis quos magnam, vero, totam laborum rerum iure deleniti repellat adipisci impedit. Accusantium quod non maxime hic eaque cupiditate facere deleniti saepe est cumque animi, itaque sed minus nemo laboriosam enim, laborum rerum impedit, deserunt maiores quos necessitatibus veritatis sapiente voluptatibus. Amet architecto impedit ea laborum fugit consequuntur enim eveniet in eaque dicta! Harum, mollitia laudantium quam repellendus et incidunt, eveniet cupiditate maiores, repudiandae quod aperiam dolor autem cumque error aliquam deleniti quisquam nobis voluptates fugit nihil quae similique tempore! Dicta aliquid cum vel explicabo reprehenderit quos earum, nisi deleniti. Commodi, corporis cumque deserunt voluptatem tenetur corrupti nihil consectetur voluptates eos provident distinctio, eius, nemo optio omnis assumenda. Adipisci, earum error! Aspernatur nam consequatur sint ea sequi hic! Iure tenetur laudantium in perferendis aspernatur animi ex nisi dolor iste inventore officia corrupti assumenda atque labore impedit, commodi, et eum ratione itaque quidem, perspiciatis aut molestiae? Unde asperiores iste fugiat exercitationem. Repellat, officiis rem, dolore asperiores neque voluptates deserunt eligendi quas excepturi a officia nesciunt laboriosam expedita inventore reprehenderit tempora quaerat fugiat cum incidunt atque voluptas. Autem eaque quaerat dicta deleniti, praesentium eligendi exercitationem ad aliquid eum ex cupiditate sed rerum, aperiam a quasi voluptates expedita eveniet delectus neque, quis dolore! Delectus, debitis expedita suscipit est ducimus excepturi incidunt officia labore dolorum, saepe dicta reprehenderit architecto? Ipsa, eum. Quidem, repudiandae deserunt. Explicabo voluptate iste libero labore totam, nisi, commodi itaque eos similique cupiditate vitae nobis! Repellendus ad assumenda qui voluptatem tenetur. Voluptas minima necessitatibus odit laudantium, dolore iste quod nulla explicabo at dolor sed harum debitis corporis totam, dolores praesentium quam rem tenetur hic, modi excepturi. Magni at nesciunt, ex tenetur dolores hic aperiam harum. Aperiam assumenda provident repellendus voluptatibus.</p>
+  <div class="container">
+    <vue-particles
+      :clickEffect="true"
+      color="#dedede"
+    />
+    <div class="about">
+      <h1 class="about__title">Full name: Sergey Ustinov</h1>
+      <h2 class="about__skills">Front-end Developer</h2>
+      <h2 class="about__skills">Location: Ukraine/Vinnitsa</h2>
+      <i class="fab fa-github-square">123</i>
+      <h2 class="about__skills">Skills:</h2>
+      <p>Front End</p>
+      <ul>
+        <li v-for="skill in frontEndSkills" :key="skill">{{ skill }}</li>
+      </ul>
+      <p>Back End</p>
+      <ul>
+        <li v-for="skill in backEndSkills" :key="skill">{{ skill }}</li>
+      </ul>
+      <p>Services</p>
+      <ul>
+        <li v-for="skill in services" :key="skill">{{ skill }}</li>
+      </ul>
+    </div>
   </div>
 </template>
 
+<script lang="ts">
+import Vue from 'vue';
+
+export default Vue.extend({
+  data: () => ({
+    frontEndSkills: [
+      'ES6+',
+      'Type Script',
+      'Flow a little',
+      'Vuejs',
+      'React',
+      'HTML5',
+      'CSS3',
+      'Preprocessors: Stylus',
+      'Webpack/Parcel/Gulp',
+      'Unit-testing',
+    ],
+    backEndSkills: [
+      'Nodejs',
+      'Golang',
+      'Express/Koa/Fastify',
+      'MongoDB',
+      'Sequelize ORM for SQL DBs',
+      'RESTful APIs',
+      'GraphQL a bit',
+      'Websockets',
+      'ejs/pug',
+    ],
+    services: ['Git', 'Docker', 'Linters(Eslint/TSlint/Flow)', 'CI: Travis', 'Linux'],
+  }),
+});
+</script>
+
+
 <style lang="stylus" scoped>
-.about
-  background #fafafa
+.container
+  position relative
+  width 100%
+  max-width 100%
+  height 100vh
+  display flex
+  justify-content center
+  align-items center
+  .about
+    background #fafafa
+    padding 1rem
+    display grid
+    justify-content center
+    align-items center
+    width 65%
+    position absolute
+    top 65%
+    left 50%
+    transform translate(-50%, -50%)
+  &__title
+    font-size responsive 1rem 2rem
+    margin-top 5rem
+    margin-bottom .3rem
+  &__skills
+    font-size responsive 1rem 2rem
+    margin .3rem 0
+  li
+    font-size responsive 1rem 1.2rem
+
+@media (max-width 600px)
+  .about
+    width 100%
+    &__title
+      margin-top 3rem
 </style>
