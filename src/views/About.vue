@@ -38,14 +38,13 @@ export default Vue.extend({
     frontEndSkills: [
       'ES6+',
       'TypeScript',
-      'Flow a little',
       'Vuejs',
       'React',
       'HTML5',
       'CSS3',
       'Preprocessors: Stylus',
       'Webpack/Parcel/Gulp',
-      'Unit-testing',
+      'Unit-testing(jest/mocha/chai)',
     ],
     backEndSkills: [
       'Nodejs',

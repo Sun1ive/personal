@@ -1,6 +1,11 @@
 <template>
   <div v-if="isVisible" class="background">
-    <h1 class="head slideUp">Sunlive.pro</h1>
+    <div class="head">
+      <h1 class="main__text slideUp">Sunlive</h1>
+      <template class="main__text slideDown">
+        <router-link tag="span" to="/about">View profile</router-link>
+      </template>
+    </div>
     <vue-particles
       :clickEffect="true"
       color="#dedede"
@@ -42,12 +47,18 @@ export default Vue.extend({
   left 50%
   z-index 555
   transform translate(-50%, -50%)
-  transition .4s ease
-  color #fff
-  font-size responsive 1.5rem 5.5rem
-  pointer-events none
-  will-change opacity,font-size,padding
-  transition .3s ease
-  border-bottom 1px solid currentColor
+  .main__text,
+  .main__text + *
+    width 100%
+    color #fff
+    font-size responsive 1.5rem 5.5rem
+    will-change opacity,font-size,padding
+    transition .3s ease
+    text-align center
+    margin .5rem 0
+    &:hover
+      color #01f5fd
+      cursor pointer
+      transition .3s ease
 
 </style>
