@@ -1,12 +1,30 @@
 <template>
-  <div class="background slideUp">
-    <h1 class="head">Sunlive.pro</h1>
+  <div class="background">
+    <h1 class="head slideUp">Sunlive.pro</h1>
     <vue-particles
+      v-if="isVisible"
       :clickEffect="true"
       color="#dedede"
     />
   </div>
 </template>
+
+<script lang="ts">
+import Vue from 'vue';
+
+export default Vue.extend({
+  data: () => ({
+    isVisible: true,
+  }),
+  beforeDestroy() {
+    this.isVisible = false;
+  },
+  beforeRouteLeave(to, from, next) {
+    this.isVisible = false;
+    next();
+  },
+});
+</script>
 
 
 <style lang="stylus" scoped>
@@ -29,17 +47,8 @@
   color #fff
   font-size responsive 1.5rem 5.5rem
   pointer-events none
+  will-change opacity,font-size,padding
+  transition .3s ease
+  border-bottom 1px solid currentColor
 
-.slideUp
-  animation slideUp .5s forwards cubic-bezier(0,.11,0,.22)
-
-@keyframes slideUp {
-  from {
-    transform translateY(2%)
-    opacity 0
-  } to {
-    transform translateY(0)
-    opacity 1
-  }
-}
 </style>
