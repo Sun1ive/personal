@@ -32,7 +32,7 @@ export default Vue.extend({});
   &__item
     text-decoration none
     color #dedede
-    font-size 2rem
+    font-size responsive 1.2rem 2rem
     margin 0 1rem
 
 .active
