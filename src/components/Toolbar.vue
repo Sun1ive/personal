@@ -33,9 +33,10 @@ export default Vue.extend({});
     text-decoration none
     color #dedede
     font-size 2rem
-    margin 0 1.5rem
+    margin 0 1rem
 
 .active
-  color green
+  transition .4s ease
+  color #01F5FD
   border-bottom 2px solid currentColor
 </style>
