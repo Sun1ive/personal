@@ -4,7 +4,7 @@ import Router from 'vue-router';
 Vue.use(Router);
 
 export default new Router({
-  base: '/personal/',
+  base: process.env.NODE_ENV === 'production' ? '/personal/' : '/',
   mode: 'history',
   routes: [
     {
