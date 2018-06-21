@@ -6,7 +6,17 @@
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
-    "test:unit": "vue-cli-service test:unit"
+    "test": "vue-cli-service test:unit",
+    "dev": "yarn serve",
+    "postbuild": "react-snap"
+  },
+  "homepage": "/personal/",
+  "reactSnap": {
+    "source": "dist",
+    "minifyHtml": {
+      "collapseWhitespace": false,
+      "removeComments": false
+    }
   },
   "dependencies": {
     "register-service-worker": "^1.0.0",
@@ -27,6 +37,7 @@
     "@vue/test-utils": "^1.0.0-beta.16",
     "babel-core": "7.0.0-bridge.0",
     "lint-staged": "^6.0.0",
+    "react-snap": "^1.15.0",
     "stylus": "^0.54.5",
     "stylus-loader": "^3.0.2",
     "ts-jest": "^22.4.6",
