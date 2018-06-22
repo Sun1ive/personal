@@ -38,19 +38,23 @@ export default Vue.extend({
   transition 1s
 
 @keyframes slidePageIn {
-  from {
+  0% {
     opacity 0
     transform translateY(-100%)
-  } to {
+  } 50% {
+    opacity 1
+    transform translateY(10%)
+  }
+  } 100% {
     opacity 1
     transform translateY(0)
   }
-}
+
 @keyframes slidePageOut {
-  from {
+  0% {
     opacity 1
     transform translateY(0)
-  } to {
+  } 100% {
     opacity 0
     transform translateY(10%)
   }
