@@ -3,7 +3,7 @@
     <div class="head">
       <h1 class="main__text slideUp">Sunlive</h1>
       <template class="main__text slideDown">
-        <router-link tag="span" to="/about">View profile</router-link>
+        <router-link class="profile" tag="span" to="/about">View profile</router-link>
       </template>
     </div>
     <vue-particles
