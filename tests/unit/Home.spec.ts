@@ -8,6 +8,7 @@ describe('Home.vue', () => {
   const wrapper = mount(Home, {
     localVue,
     stubs: {
+      // eslint-disable-next-line
       RouterLink: RouterLinkStub,
       'vue-particles': 'vue-particles',
     },

@@ -1,13 +1,17 @@
 <template>
   <div v-if="isVisible" class="background">
     <div class="head">
-      <h1 class="main__text slideUp">Sunlive</h1>
-      <template class="main__text slideDown">
-        <router-link class="profile" tag="span" to="/about">View profile</router-link>
-      </template>
+      <h1 class="main__text fadeIn">Sunlive</h1>
+      <router-link
+        class="main__text fadeIn"
+        to="/about"
+      >View profile</router-link>
     </div>
     <vue-particles
-      :clickEffect="true"
+      :clickEffect="false"
+      :particlesNumber="100"
+      :lineLinked="false"
+      shapeType="circle"
       color="#dedede"
     />
   </div>
@@ -56,9 +60,23 @@ export default Vue.extend({
     transition .3s ease
     text-align center
     margin .5rem 0
+    text-decoration none
     &:hover
       color #01f5fd
       cursor pointer
       transition .3s ease
+
+.fadeIn
+  animation showFadeIn 5s ease
+
+@keyframes showFadeIn {
+  from {
+    transform scale(0.5)
+    opacity 0
+  } to {
+    opacity 1
+    transform scale(1)
+  }
+}
 
 </style>

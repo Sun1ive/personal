@@ -1,7 +1,8 @@
 <template>
   <div class="container">
     <vue-particles
-      :clickEffect="true"
+      :clickEffect="false"
+      :particlesNumber="70"
       color="#dedede"
     />
     <div class="about">
@@ -68,7 +69,6 @@ export default Vue.extend({
   position relative
   width 100%
   max-width 100%
-  height 100vh
   display flex
   justify-content center
   align-items center
@@ -94,7 +94,6 @@ export default Vue.extend({
     transform translate(-50%, -50%)
     &__title
       font-size responsive 1rem 2rem
-      margin-top 5rem
       margin-bottom .3rem
     &__skills
       font-size responsive 1rem 2rem
